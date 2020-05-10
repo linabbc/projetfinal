@@ -24,9 +24,9 @@ PROJECT_DIR=os.path.dirname(__file__)
 SECRET_KEY = '2g-3m7v-75041=5^9#)kt0=m0(a%63&5ivh*u$ajr)%4sc!@&x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+TEMPLATE_DEBUG = False
+ALLOWED_HOSTS = [".pythonanywhere.com"]
 
 
 # Application definition
@@ -121,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(PROJECT_DIR,'static/')
+
 #STATICFILES_DIRS = ( os.path.join(PROJECT_DIR,'static/'),)
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)

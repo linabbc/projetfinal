@@ -1,0 +1,58 @@
+.bienvenue
+{
+
+	font-size: 2em;
+	font-style: bold;
+	text-align: center;
+	margin-left: 15cm;
+	margin-right: 15cm;
+}
+.accueil
+{
+	color: #D28B98;
+	font-size: 5em;
+	font-weight: bold;
+	text-align: center;
+	border-top: 100px solid #D2BCC0;
+	margin-left: 15cm;
+	margin-right: 15cm;
+}
+body
+{
+	background-color: #D2BCC0;
+	color: white;
+	font-family: "Georgia";
+	
+}
+.bienvenue em
+{
+	font-weight: bold;
+}
+.sidebar-nav
+{
+	border-top: 200px solid #D2BCC0;
+}
+.quarant
+{
+	color: #DA5A70;
+	font-size: 3em;
+	font-weight: bold;
+	text-align: center;
+	border-top: 50px solid #D2BCC0;
+	border-left: 100px solid #D2BCC0;
+}
+.connexion,.inscription
+{
+	border-top: 300px solid #D2BCC0;
+	border-left: 100px solid #D2BCC0;
+}
+.choix_produit
+{
+	border-top: 100px solid #D2BCC0;
+	text-align: center;
+}
+.form_produit,.form_connexion
+{
+	border-top: 50px solid #D2BCC0;
+	margin-left: 10cm;
+}

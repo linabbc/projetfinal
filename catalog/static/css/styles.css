@@ -1,0 +1,140 @@
+.bienvenue
+{
+	color: #D28B98;
+	font-size: 2em;
+	font-style: bold;
+	padding-left: 275px;
+
+}
+.accueil
+{
+	color: #D28B98;
+	font-size: 5em;
+	font-weight: bold;
+	text-align: center;
+	padding-left: 275px;
+}
+body
+{
+	background-color: #D2BCC0;
+	color: white;
+	font-family: "Georgia";
+	
+}
+.bienvenue em
+{
+	font-weight: bold;
+}
+.sidebar-nav
+{
+	font-size: 1em;
+	font-weight: bold;
+	border-top: 275px solid #D2BCC0;
+}
+.quarant
+{
+	color: #DA5A70;
+	font-size: 3em;
+	font-weight: bold;
+	text-align: center;
+	border-top: 50px solid #D2BCC0;
+	border-left: 100px solid #D2BCC0;
+}
+.connexion
+{
+	font-family: "Georgia";
+	font-size: 3em;
+	font-style: bold;
+	padding-left: 400px;
+	border-top: 100px solid #D2BCC0;
+}
+.choix_produit
+{
+	font-size: 2em;
+	font-style: bold;
+	padding-left: 275px;
+	border-top: 20px solid #D2BCC0;
+	border-bottom: 100px solid #D2BCC0;
+}
+.titre_historique
+{
+	font-size: 3em;
+	font-style: bold;
+	border-top:50px;
+	padding-left: 275px;
+	font-family: "Georgia";
+	border-bottom:200px;
+}
+.historique
+{
+	border-top:10px;
+	padding-left:190px;
+	font-family: "Georgia";
+	font-size: 1em;
+}
+.panier
+{
+	font-size: 3em;
+	font-style: bold;
+	padding-left: 275px;
+	font-family: "Georgia";
+}
+.panier2
+{
+	border-top: 100px solid #D2BCC0;
+	font-size: 1em;
+	font-style: bold;
+	padding-left: 220px;
+	font-family: "Georgia";
+}
+.form_panier
+{
+	border-top: 40px solid #D2BCC0;
+	font-size: 1em;
+	font-style: bold;
+	padding-left: 250px;
+	font-family: "Georgia";
+}
+.inscription
+{
+	padding-top: 115px;
+	font-size: 1em;
+	font-style: bold;
+	padding-left: 220px;
+	font-family: "Georgia";
+}
+.form_produit
+{
+	border-top: 50px solid #D2BCC0;
+	margin-left: 10cm;
+	font-family: "Georgia";
+}
+
+.etoile
+{
+	border-top: 50px solid #D2BCC0;
+	border-left: 100px
+	text-align: center;
+	font-family: "Georgia";
+}
+.username
+{
+	border-top: 230px solid #D2BCC0;
+	color: white;
+	font-family: "Georgia";
+	font-size: 1em;
+	margin-left: 370px;
+}
+.form_connexion
+{
+	border-top:3px solid #D2BCC0;
+	margin-left: 340px;
+}
+.titre_inscr
+{
+	font-family: "Georgia";
+	font-size: 3em;
+	font-style: bold;
+	padding-left: 275px;
+	border-top: 60px solid #D2BCC0;
+}

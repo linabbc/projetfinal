@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div class="choix_produit">
+    <h1 class="">Liste des produits disponibles</h1>
+  </div>
+  
+  <h2 class="">Veuillez selectionner les produits que vous souhaitez commander.</h2>
+  
+  <div class = "form_produit">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <table>
+          {{ form.as_table }}
+      </table>
+      <input type="submit" value="Valider">
+    </form>
+  </div>
+  <p class="etoile">&#9733;: correspond au produit le plus vendu.</p>
+{% endblock %}

@@ -2,37 +2,20 @@ from catalog.models import Selection,Produit,Client
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from catalog.forms import InscriptionForm,CommandeForm,PanierForm,Info
+from catalog.forms import InscriptionForm,CommandeForm,PanierForm,Info,ModifInfo,ModifierInfo,BesoinInfo
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from datetime import datetime
 from datetime import date
-from time import strftime
-from django.contrib.auth.models import User
 
 
 def accueil(request):
     """View function for home page of site."""
-
-    inscription = 'inscription'
-    connexion = 'connexion'
-    informations = 'informations'
-
-#    
-    context = {
-        'inscription': inscription,
-        'connexion': connexion,
-        'informations': informations,
-    }
-    
-#    messages.success(request,'Le produit le plus vendu est : ' + Stat(request))
-    # Render the HTML template index.html with the data in the context variable
-    return render(request, 'accueil.html', context=context)
+    return render(request, 'accueil.html',{})
   
+    
+
 hist = []   
-#historique = []
- 
 def commander(request):
     L = Apriori()
     mot = ""
@@ -43,9 +26,7 @@ def commander(request):
         
         else:
             mot += ' ' + str(Produit.objects.get(id_p = n)) + ','
-            i += 1
-
-            
+            i += 1         
     messages.info(request,'Voici le panier du jour:' + mot)
     messages.info(request,'Cochez la case si vous voulez commander ce panier.')                
     selection = Selection()
@@ -54,14 +35,13 @@ def commander(request):
         if form2.is_valid():
             if form2.cleaned_data['choix'] == '1':
                 selection.choix = Apriori()
-                hist.append((date.today(),selection.choix))
                 selection.choix.append(request.user.username)
                 selection.save()
+                hist.append((date.today(),selection.choix))
             else:
                 return redirect('choix_produit')
             return redirect('accueil')
     else:
-#        form1 = CommandeForm(initial={})
         form2 = PanierForm(initial={})
 
     context = {
@@ -69,33 +49,66 @@ def commander(request):
     }
     return render(request, 'catalog/panier.html', context)
 
+
 def historique(request):
     for i in range(len(hist)):
         date,choix=hist[i]
         if request.user.username == str(choix[-1]):
             mot = ""
-            i = 0
+            j = 0
             for n in choix[0:-1]:
-                if(i == len(choix) - 2):
+                if(j == len(choix) - 2):
                     mot += ' ' + str(Produit.objects.get(id_p = n)) + '.'
         
                 else:
                     mot += ' ' + str(Produit.objects.get(id_p = n)) + ','
-                    i += 1
+                    j += 1
             messages.success(request,'Le ' + str(date) + ', vous avez commandé: '+ mot)
     return render(request,'catalog/historique.html',{})
 
-def documents(request):
-    return render(request,'catalog/documents.html',{})
+
+def modif(request):
+    if request.method == 'POST':
+        form = ModifInfo(request.POST)
+        form1 = BesoinInfo(request.POST)
+        if form.is_valid()and form1.is_valid():
+            if form.cleaned_data['modif']:
+                return redirect('modifications')
+            return redirect('mesinfos')
+    else:
+        form = ModifInfo(initial={})
+        form1 = BesoinInfo(initial={})
+    context = {
+        'form':form,'form1':form1
+    }
+    return render(request, 'catalog/mesinfos.html', context)
+
+
+def contact(request):
+    return render(request,'catalog/contact.html')
+
+
+def modifier(request): 
+    if request.method == 'POST':
+        form = ModifierInfo(request.POST)
+        if form.is_valid():
+            return redirect('mesinfos')
+    else:
+        form = ModifierInfo(initial={})
+    context = {'form':form}
+    return render(request,'catalog/modifications.html',context)
   
+    
 def Admin(request):
     return redirect('/admin')
+
 
 @login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('accueil'))
     
+
 def renew_inscription(request):
     form = InscriptionForm()
     form2 = Info()
@@ -107,24 +120,21 @@ def renew_inscription(request):
             form.save()
             user = form.cleaned_data['username']
             client.user = user
-            client.document = form.cleaned_data['document']
             client.adresse = form2.cleaned_data['adresse']
+            client.document = form.cleaned_data['document']
             client.nombre_personnes = form2.cleaned_data['nombre_personnes']
-            messages.success(request,'Vous êtes maintenant inscrit(e) ' + user + ' !')
             client.save()
+            messages.success(request,'Vous êtes maintenant inscrit(e) ' + user + ' !')
             return redirect('user_login')
-            
     context = {'client':client,'form':form,'form2':form2}
     return render(request, 'catalog/inscription.html',context)
     
-def user_login(request):
-    
+
+def user_login(request): 
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-
         user = authenticate(request,username=username,password=password)
-        
         if user is not None:
             login(request,user)
             return redirect('accueil')
@@ -139,6 +149,7 @@ def Erase (Dico,seuil):
         for key in l:
             if (Dico[key]<seuil): Dico.pop(key)
         return Dico
+    
     
 def Apriori():
         a = [list(q.values()) for q in Selection.objects.values()]
@@ -203,7 +214,6 @@ def articles(request):
     if request.method == 'POST':
         form =  CommandeForm(request.POST)
         if form.is_valid():
-#            form.save()
             selection.choix = form.cleaned_data['choix']
             hist.append((today,selection.choix))
             selection.choix.append(request.user.username)
@@ -215,8 +225,3 @@ def articles(request):
 
 
 
-#def Stat(request):
-#    p = Produit_vendu()
-#    mot = str(Produit.objects.get(id_p = p))
-#    return mot
-#    return render(request,'catalog/accueil.html',{})

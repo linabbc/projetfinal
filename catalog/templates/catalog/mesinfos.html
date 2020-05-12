@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div>
+    <h1 class="mesinfos">Mes informations</h1>
+  </div>
+  <div class="form_infos">
+    <form action="" method="POST">
+        {% csrf_token %}
+	
+        <BR>Prenom: {{user.first_name}}
+ 	<BR>Nom: {{user.last_name}}
+	<BR>Email: {{user.email}} 
+        <table>
+            {{ form.as_table }}
+        </table>
+	<input type="submit" value="Valider">
+	<table>
+            {{ form1.as_table }}
+        </table>
+	<input type="submit" value="Valider">
+      </form>
+  </div>
+{% endblock %}

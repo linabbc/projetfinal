@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <div>
+      <h1 class="titre_modif">Modifications</h1>
+    </div>
+    <div class = "form_modif">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Valider">
+      </form>
+    </div>
+  
+{% endblock %}

@@ -14,7 +14,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-import os
+
 PROJECT_DIR=os.path.dirname(__file__)
 
 # Quick-start development settings - unsuitable for production
@@ -24,9 +24,9 @@ PROJECT_DIR=os.path.dirname(__file__)
 SECRET_KEY = '2g-3m7v-75041=5^9#)kt0=m0(a%63&5ivh*u$ajr)%4sc!@&x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = False
-ALLOWED_HOSTS = [".pythonanywhere.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -34,7 +34,6 @@ ALLOWED_HOSTS = [".pythonanywhere.com"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-#    'django.contrib.auth.backends.ModelBackEnd',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -121,8 +120,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(PROJECT_DIR,'static/')
-
-#STATICFILES_DIRS = ( os.path.join(PROJECT_DIR,'static/'),)
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'

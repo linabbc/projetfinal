@@ -4,48 +4,43 @@
 	color: #D28B98;
 	font-size: 2em;
 	font-style: bold;
-	padding-left: 275px;
-
+	border:5px solid black;
+	text-align: center;
 }
 .accueil
 {
 	font-family: "Georgia";
-	color: #D28B98;
-	font-size: 5em;
 	font-weight: bold;
-	text-align: center;
-	padding-left: 275px;
+	color: #D28B98;
+	font-size: 3em;
+	padding-left: 270px;
+	border-top: 100px solid;
+	border:5px solid white;
+	border-color:transparent;
 }
 body
 {
+	box-sizing:border-box;
 	color: white;
 	font-family: "Georgia";
 	background:url("https://images8.alphacoders.com/884/884377.jpg");
 	background-repeat:no-repeat;
-	background-size:100%;
+	background-size:cover;
+	height:100%;
 }
 .bienvenue em
 {
+	border:5px solid white;
 	font-family: "Georgia";
 	font-weight: bold;
 }
 .sidebar-nav
 {
-	font-size: 1em;
+	font-size: large;
 	font-weight: bold;
-	border-top: 275px solid;
-	border-color:transparent;
+	margin-top:90%;
 }
-.quarant
-{
-	color: #DA5A70;
-	font-size: 3em;
-	font-weight: bold;
-	text-align: center;
-	border-top: 50px solid;
-	border-left: 100px solid;
-	border-color:transparent;
-}
+
 .connexion
 {
 	font-family: "Georgia";
@@ -55,17 +50,7 @@ body
 	font-style: bold;
 	padding-left: 400px;
 	border-top: 100px solid;
-	border-color:transparent;
-}
-.choix_produit
-{
-	font-family: "Georgia";
-	color: #D28B98;
-	font-size: 3em;
-	font-weight: bold;
-	padding-left: 275px;
-	border-top: 20px solid;
-	border-bottom: 100px solid;
+	border:5px solid white;
 	border-color:transparent;
 }
 .titre_historique
@@ -75,18 +60,51 @@ body
 	color: #D28B98;
 	font-size: 3em;
 	font-style: bold;
-	border-top:50px solid;
-	padding-left: 275px;
-	font-family: "Georgia";
-	border-bottom:200px solid;
+	padding-left: 200px;
+	border-top: 100px solid;
+	border:5px solid white;
 	border-color:transparent;
+}
+.mesinfos
+{
+	font-family: "Georgia";
+	font-weight: bold;
+	color: #D28B98;
+	font-size: 3em;
+	font-style: bold;
+	padding-left: 400px;
+	border-top: 100px solid;
+	border:5px solid white;
+	border-color:transparent;
+}
+.choix_produit
+{
+	border:5px solid white;
+	font-family: "Georgia";
+	color: #D28B98;
+	font-size: 3em;
+	font-weight: bold;
+	padding-left: 275px;
+	border-top: 20px solid;
+	border-bottom: 100px solid;
+	border-color:transparent;
+}
+.titre_contact
+{
+	font-family: "Georgia";
+	font-weight: bold;
+	color: #D28B98;
+	font-size: 3em;
+	margin-left: 270px;
+	text-align: center;
 }
 .historique
 {
+	border:5px solid white;
 	font-family: "Georgia";
 	border-top:10px solid;
 	border-color:transparent;
-	padding-left:190px;
+	border-left:100px;
 	font-size: 1em;
 }
 .panier
@@ -96,9 +114,11 @@ body
 	color: #D28B98;
 	font-size: 3em;
 	padding-left: 275px;
+	border-color:transparent;
 }
 .panier2
 {
+	border:5px solid white;
 	font-family: "Georgia";
 	border-top: 100px solid;
 	border-color:transparent;
@@ -107,7 +127,8 @@ body
 	padding-left: 220px;
 }
 .form_panier
-{
+{	
+	border:5px solid white;
 	font-family: "Georgia";
 	border-top: 40px solid;
 	border-color:transparent;
@@ -117,14 +138,17 @@ body
 }
 .inscription
 {
+	border:5px solid white;
 	font-family: "Georgia";
-	padding-top: 115px;
+	padding-top: 95px;
 	font-size: 1em;
 	font-style: bold;
 	padding-left: 220px;
+	border-color:transparent;
 }
 .form_produit
 {
+	border:5px solid white;
 	font-family: "Georgia";
 	border-top: 50px solid;
 	border-color:transparent;
@@ -133,6 +157,7 @@ body
 
 .etoile
 {
+	border:5px solid white;
 	font-family: "Georgia";
 	border-top: 50px solid;
 	border-color:transparent;
@@ -144,24 +169,38 @@ body
 	font-family: "Georgia";
 	border-top: 300px solid;
 	border-color:transparent;
-	color: white;
+	color: black;
 	font-size: 1em;
 	margin-left: 370px;
 }
 .form_connexion
 {
+	border:5px solid white;
 	font-family: "Georgia";
-	border-top:3px solid;
+	border-top: 3px solid;
 	border-color:transparent;
 	margin-left: 340px;
 }
 .titre_inscr
 {
+	border:5px solid white;
 	font-family: "Georgia";
 	font-weight: bold;
 	color: #D28B98;
 	font-size: 3em;
 	padding-left: 275px;
-	border-top: 60px solid;
+	border-top: 40px solid;
 	border-color:transparent;
+}
+.contact
+{
+	margin-top:3px;
+	font-size: 1.5em;
+	margin-left:570px;
+	border-color:transparent;	
+}
+.form_infos
+{
+	font-family: "Georgia";
+	margin-top:300px;
 }

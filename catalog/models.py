@@ -6,7 +6,6 @@ from django.contrib.auth.models import AbstractBaseUser
 
 class Produit(models.Model):
     """A typical class defining a model, derived from the Model class."""
-
     # Fields
     nom = models.CharField(max_length=50, help_text='Enter field documentation')
     medicament = 'medicament'
@@ -30,19 +29,25 @@ class Produit(models.Model):
         return self.nom
 
     
+    
+    
 class Client(models.Model):
     """A typical class defining a model, derived from the Model class."""
-
     # Fields
     user = models.TextField(max_length=50)
     document = models.FileField(null=True,blank=True)
     adresse = models.CharField(max_length=500)
     nombre_personnes = models.IntegerField()
+
     class Meta:
         ordering = ['user']
 
+
+
+
+
 class Selection(models.Model):
-#    client = models.ForeignKey(User,on_delete=models.CASCADE)
+
     choix = models.TextField(default = " ") 
     
     class Meta:
